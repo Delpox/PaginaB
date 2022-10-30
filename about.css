@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@657&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color:inherit;
+    font-family: 'Montserrat', sans-serif ;
+    scroll-behavior: smooth;
+    
+}
+
+.to-top {
+    background-color: aliceblue;
+    position: fixed ;
+    bottom: 16px;
+    right: 39px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 32px;
+    color: black;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+.to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+}
+.body{
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: var(--font);
+    padding: 4rem 0;
+}
+
+:root {
+    --bg: #fdfdfd;
+    --highlight1: #426ded;
+    --highlight2: #18ad4a;
+    --color: ##1a1e24;
+    --font-number: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+    --font-head: "Space Mono", Consolas, Menlo, Monaco, "Courier New", monospace;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(86, 141, 155);
+    font-family: 'Montserrat', sans-serif ;
+    
+}
+
+.logo{
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{ 
+    display: flex;
+    justify-content: space-around;
+    width: 37%;
+}
+.nav-links li {
+    text-decoration: none;
+    list-style:none;
+}
+.nav-links {
+    color: aliceblue;
+    
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    margin:5px;
+    background-color: rgb(226, 226, 226);
+    transition: all 0.5s ease;
+}
+
+.boxani{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    min-height: 17vh;
+}
+.contentani{
+    position: relative;
+  }
+  
+  .contentani h2 {
+    color: #fff;
+    font-size: 6em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+  }
+  
+  .contentani h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+  }
+  
+  .contentani h2:nth-child(2) {
+    color: #03a9f4;
+    animation: animate 4s ease-in-out infinite;
+  }
+  
+/* ACERCA DE MI */
+
+
+@keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+.section #about{
+    padding: 2rem 0 4rem;
+    margin: 20px;
+    width: 50%;
+}
+
+
+.section__title{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 1vh;
+    
+}
+.section__subtitle {
+    display: flex;
+    font-size: 25px;
+    justify-content:center;
+    max-width: 85%;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 2em;
+    width: 99%;
+  }
+  
+  .box img {
+    width: 50%;
+    height: auto;
+    border-radius: 2rem;
+  }
+  
+ 
+
+.about__info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    
+}
+
+
+.about__container{
+    display: grid;
+    padding: 20px;
+}
+
+.pacercademi{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding-bottom: 1fr;
+    text-shadow: 0 0.5;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.list{
+    list-style: none;
+    
+    max-width: 84%;
+}
+.item{
+    display: block;
+    clear: both;
+    counter-increment: list;
+    padding-bottom: 4rem;
+    font-size: 1.1rem;
+    line-height: 1.375;
+    position: relative;
+
+}
+.item::before{
+    font:   bold 2.25rem/1 var(--font-number);
+    content: counter(list);
+    width: 5rem;
+    height: 5rem;
+    float: left;
+    margin: 0 1.5rem 0.75rem 0;
+    color: var(--bg);
+    background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+    text-shadow: 0 0 2px var(--highlight1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    shape-outside: ellipse();
+    z-index: 1;
+}
+.item::after{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    content: "";
+    background: var(--highlight1);
+    z-index: -1;
+    border-top-left-radius: 3px;
+
+}
+
+
+
+
+.box .img2{
+    width: 50%;
+    height: auto;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+/*----------------------ANIMACION POEMAS */
+
+.asideheadline
+
+.visuallyhidden {
+	position: absolute;
+	z-index: -1;
+	right: 0;
+	opacity: 0;
+	
+  }
+  
+
+  
+  .container {
+	overflow: hidden;
+	padding: 20px;
+	background: rgba(0,0,0,.1);
+    width: 100%;
+    height: 1300px;
+    max-width: 100%;
+
+  }
+  
+  .card-carousel {
+	--card-width: 80%;
+	--card-max-width: 550px;
+	--card-height: 90%;
+	--carousel-min-width: 600px;
+	z-index: 1;
+	position: relative;
+	margin: 5px auto;
+	width: 100%;
+	height: var(--card-height);
+	min-width: var(--carousel-min-width);
+	transition: filter .3s ease;
+  }
+  
+  @media screen and (max-width: 1000px) {
+	.card-carousel {
+	  margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+	}
+  }
+  
+  .card-carousel.smooth-return {
+	transition: all .2s ease;
+  }
+  
+  .card-carousel .card {
+	background: whitesmoke;
+	width: var(--card-width);
+	max-width: var(--card-max-width);
+	text-align: center;
+	padding: 1em;
+	min-width: 250px;
+	height: var(--card-height);
+	position: absolute;
+	margin: 0 auto;
+	color: rgba(0,0,0,.5);
+	transition: inherit;
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 1em;
+	filter: brightness(.9);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    line-height: 200%
+  }
+  
+  .card.highlight {
+	filter: brightness(1)
+  }
+  
+  
+  .card:nth-of-type(1) .image-container {
+	  background-image: url("https://cdn-images-1.listennotes.com/podcasts/docentes/el-mito-de-sisifo-HLrKCbBnsGj-8z0KgUCu7hq.1400x1400.jpg");
+  }
+   
+  .card:nth-of-type(2) .image-container {
+	background-image: url("https://panampost.com/wp-content/uploads/Libertad-1.jpg")
+  }
+  
+  .card:nth-of-type(3) .image-container {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAABlZWWOjo6RkZGCgoJubm5iYmJra2s/Pz+enp7c3Nyzs7Pl5eWnp6eVlZUuLi7R0dG6urr4+PjX19ft7e3x8fHFxcWrq6soKCh6enpbW1tTU1MRERHNzc0+Pj43NzdKSkorKysWFhYeHh5OTk51dXV+fn5evV8hAAAEsUlEQVR4nO2abXuiOhCG4ajdCmgXUbBqrX1Z/f//cAlSM5PE9rpOVap7358MEyd5QpiECVEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/hyqzTLvuzFlYxpZe1505C/8Jhf2uO3MWUHj9oPD6+RcVjvI8LQI1i9qQp7PvNjib1m5GoQbOhKMwvdv/HGa6WtrbfNT6k4RUTnv9lt48fKGmHK8+vDwuKvHvyaFyvzepy5koV9H3kAofooEtvAod+Z9YcT/y/KTin82Fsb0w2FcpBtrL0/jwb2nZ1eV7Uf7uPkQq7MkNThwfZpLTM8PccySMTfnBlvdKpr6X36NAC2Y87s6k0GHXVvkVMg5cR0NrmzmdbubZOtjGtFOF7U3shY2J40h0ch3pThoZsyNtlJ0qbHo6OmZ1nsXMWpopLGa8URGcCDWrCyt8VKUmnm7FhSdp/6UdiVDT9OnZlt1xUq2sL6qwiCpPoSjX490XxVJ7crS/WkGRijv1pJVTdnlJhfd1+UmUzWzLRTnR98JZMm2oedWCjYYXW3xTdfdP+yUViq40CsWyZiTJ0d9qT6KXhVK4U6X4OdJP5fTCCuWSaMLlTissRHGjPYlQUwehUrmRt34Y6RV9cmGFcnQTR7GjMNaeRKiplKZMz3VX4bhjhS9aoZxux0PNWO1g6mk4+URh0rHCjSi7Cp0duF0fdmoLU1ebf6LwoWOFv2Vb60qtJs6ab7u5Unct0vHqJyt0SbUrG2re5V17vx2FItQUYolf3Y7CSFpsn7c3pNDuVCrRx/4NKRyIf1o/2RUrdE9ybKhZiKVjfUUKk1QxdRNmNtS8RPYNaXRFCidf+BJbOhF1iitTWI4sXtLTTk2x8Y6uTKF4g/Cew2hxMNlN2/O1KZR7aDeWCvmJcno7Cu0LhX3p6v10hSKh5Cn0M9+xT5N4++zdouu3J5nP/1qhHI+W6iuF844Vynd8V6F/QrOIPZqpLF+6us5iSEVmdGWexo2l/hGZvFctTSJAnlm4CteOwq3Tq1MqvIv8XFsiypkuP/neAqcvzXWZiXp2WjVzXZ4cmF7ImXRKhSaT++4okgcqZtaKebj0valEVcNmbxBXzMDIfKkxy4Sxk149bc671Dehcvq2+TQj3CDTOg1t7n8lLumct7de1pO/lMXTnlsMVakJEoOj9pA7L9S0/VMPqPKSG3MWH7Wf9eypqVAes4ZuoR9q2qNUf/q27M+e0mPm8ypsn7MsbF0F3XmhJm8NSchHfFhx3o+YT6zwVbv+2FgHj0gfw19TePfqkDVehrwcBmCsL6sc5gkV5kqLPeR1mjcMj30u4tR7s5aQxPxgVSFqcsoVX7ZbSC3yW4SZXKG1ekGZTiu34r2wZ2+OcSGGqXix1zO1mnxX4dx+uWK6PWv3MAtnR1aO7VAsgzEm/KjptMB6YKffauwce2RD23TSP933ND6jPPe31IYyzfN8WgZthsBkDmx7mm+iwp9WFemxpn8IAYVfZXauDF/hrX1W7Sm8sTvoRJrH7c3pM5Hog9kFP64EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhH+QtU5j8PqAaCUgAAAABJRU5ErkJggg==")
+  }
+  .card:nth-of-type(4) .image-container {
+	background-image: url("https://corralonsanjavier.com.ar/6622-large_default/cartel-salida-de-emergencia-izquierda-30x40cm.jpg")
+  }
+  .card:nth-of-type(5) .image-container {
+	background-image: url("https://w0.peakpx.com/wallpaper/954/833/HD-wallpaper-black-white-black-and-white-skatch-art-tree-winter-coming-forest.jpg")
+  }
+  
+  
+  
+  .image-container {
+	width: 9em;
+	height: 9em;
+	position: relative;
+	background-size: cover;
+	margin-bottom: 2em;
+	border-radius: 100%;
+	padding: 1em;
+	-webkit-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+  box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+	
+  }
+  
+  .image-container::after {
+	content: "";
+	display: block;
+	width: 120%;
+	height: 120%;
+	border: solid 3px rgba(0,0,0,.1);
+	border-radius: 100%;
+	position: absolute;
+	top: calc(-10% - 3px);
+	left: calc(-10% - 3px);
+  }
+  .clickeay{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    size: 15px;
+    background-color: aqua;
+    border: 3px solid rgb(0, 30, 64);
+
+  }
+
+  @media screen and  (max-width:1024px){
+    .nav-links{ 
+    
+        width: 50%;
+    }
+}
+@media screen and  (max-width:768px){
+    ul.nav-links.nav-active{
+        z-index: 10;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{ 
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgb(86, 141, 155);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        }
+        .nav-links li {
+            opacity: 1;
+            text-decoration: none;
+            color: aliceblue;
+            
+        }
+        .burger {
+            display: block;
+        }
+        .nav-active{
+            transform: translateX(0%);
+        }
+    }
+    
+
+    
+    
+            @keyframes navLinkFade{
+                from{
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateX();
+                }
+            }
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px,6px);
+            }
+            .toggle .line2{
+                opacity:0;
+            }
+            
+            .toggle .line3{
+                transform: rotate(45deg) translate(-5px,-6px);
+            
+            }
+
+/* FOOTER */
+
+.footer{
+   
+    background-color:  rgb(86, 141, 155);
+ bottom: 100;
+    width: 100%;
+    border: 0.1vh solid rgb(2, 118, 249);
+    padding-top: 20px;
+}
+.footer-content{
+   
+    margin: 5px;
+    padding:15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif ;
+    color: aliceblue;
+    
+
+}
+.footer-content h3{
+    
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin-bottom: 0.7vh;
+   
+    line-height: 3rem;
+    
+}
+.footer-content p {
+   font-weight: 100;
+   margin: 10px auto;
+   line-height: 28px;
+}
+.footer-content li {
+    text-decoration: none;
+    list-style:none;
+    color: aliceblue;
+    margin: 1rem 0 3rem 0;
+    
+    letter-spacing: 3px;
+    
+    font-size: 14px;
+}
+
+
+.socials a  {
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover {
+    color:rgb(2, 118, 249);
+}
+
+.footer-bottom p{
+    text-transform: capitalize;
+    font-size: 14px;
+    word-spacing: 2px;
+    }
+    .footer-bottom span 
+    {
+        text-transform: uppercase;
+        opacity: 0.4;
+        font-weight: 400;
+        color: black;
+     
+    }
+
+    @media only screen and (max-width: 1300px) {
+        .aside {
+            display: none;
+        }
+        #about{
+            padding: 20px;
+            margin: 10px;
+        }
+         .pacercademi{
+            padding: 1rem; 
+            margin: 5px;
+        }
+        .headline {
+            margin-bottom: 1rem ;
+        }
+    }
+
+
+@media screen and (min-width:1300px){
+
+    .section__title{
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    
+    img {
+        max-width: 40%;
+    }
+    
+    #aside {
+        display: block;
+        width: 60%;
+        float: left;
+    }
+    .aside {
+        display: block;
+        width: 150%;
+        float: right;
+        max-height: 1400px;
+      
+     
+    }
+
+
+
+
+
+
+    @media screen and  (max-width:1024px){
+        .nav-links{ 
+        
+            width: 50%;
+        }
+    }
+    @media screen and  (max-width:768px){
+        ul.nav-links.nav-active{
+            z-index: 10;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        .nav-links{ 
+            position: absolute;
+            right: 0px;
+            height: 92vh;
+            top: 8vh;
+            background-color: rgb(86, 141, 155);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+            }
+            .nav-links li {
+                opacity: 1;
+                text-decoration: none;
+                color: aliceblue;
+                
+            }
+            .burger {
+                display: block;
+            }
+            .nav-active{
+                transform: translateX(0%);
+            }
+        }
+        
+        
+                @keyframes navLinkFade{
+                    from{
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                    to{
+                        opacity: 1;
+                        transform: translateX();
+                    }
+                }
+                .toggle .line1 {
+                    transform: rotate(-45deg) translate(-5px,6px);
+                }
+                .toggle .line2{
+                    opacity:0;
+                }
+                
+                .toggle .line3{
+                    transform: rotate(45deg) translate(-5px,-6px);
+                
+                }
+            
+/* ANIMACION POEMAS */
+
+
+  
+@media screen and (max-width: 640px) {
+    .card-carousel {
+      margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    }
+  }
+  
+  
